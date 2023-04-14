@@ -154,5 +154,8 @@ VOLUME /var/www/html
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
+RUN set -eux; \
+	chmod 777 /usr/local/bin/docker-entrypoint.sh
+	
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
