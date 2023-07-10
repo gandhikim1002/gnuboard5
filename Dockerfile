@@ -120,8 +120,9 @@ RUN set -eux; \
 # (replace all instances of "%h" with "%a" in LogFormat)
 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
 
+# check version(https://github.com/gnuboard/gnuboard5/releases)
 RUN set -eux; \
-	version='5.5.8.2.8'; \
+	version='5.5.8.3.1'; \
 	\
 	curl -o gnuboard5.tar.gz -fL "https://github.com/gnuboard/gnuboard5/archive/refs/tags/v$version.tar.gz"; \
 	\
